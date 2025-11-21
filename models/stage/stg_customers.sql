@@ -1,4 +1,6 @@
-{{ config(materialized='table')}}
+
+
+{{ config(materialized='table',tags='sample')}}
 with customer as(
 select 
 c_custkey as customer_id,
@@ -10,7 +12,7 @@ c_acctbal as account_balance,
 c_mktsegment as market_segement,
 c_comment as comment 
  from {{ source('src','customers')}}
- limit 100
+--  limit 100
 )
 
 select * from customer

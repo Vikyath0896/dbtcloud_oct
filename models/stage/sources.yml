@@ -11,6 +11,7 @@ sources:
       - name: lineitems
       - name: parts
       - name: suppliers
+      - name: partsupps
         config:
           freshness:
             warn_after: {count: 1, period: hour}
