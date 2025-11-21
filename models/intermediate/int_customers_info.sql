@@ -1,2 +1,0 @@
--- d, c_name, n_nation_name, first_ordered_at, last_ordered_at, lifetime_orders, lifetime_total, customer_type
--- lifetimeorder(sum),lifetime total(sum),customer type(two values:new,recurring)
