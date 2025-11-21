@@ -7,11 +7,13 @@ sources:
       - name: regions
       - name: nations
       - name: v_nations
-      - name: orders
+      
       - name: lineitems
       - name: parts
       - name: suppliers
       - name: partsupps
+
+      - name: orders
         config:
           freshness:
             warn_after: {count: 3, period: day}
