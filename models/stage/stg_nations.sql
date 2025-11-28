@@ -10,9 +10,22 @@ with nation as (
         n_nationkey::int as nation_id,
         n_name as name,
         n_regionkey as region_id,
-        
-        updated_at
-    from {{ source ('src', 'nations') }}
+        updated_at,
+        {{ dbt_meta() }}
+    from {{ source('src', 'nations') }}
 )
 
-select * from nation
+select *
+from nation
+
+
+
+
+
+
+
+
+
+
+
+

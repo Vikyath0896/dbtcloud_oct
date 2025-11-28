@@ -54,3 +54,10 @@ END
 {% macro mod_tab(table_name) %}
     {{ dbt_utils.get_filtered_columns_in_relation(ref("stg_nations")) | join(', ') }}
 {% endmacro %}
+
+
+{% macro dbt_meta() -%}
+    '{{ invocation_id }}'::varchar as dbt_batch_id,
+    '{{ run_started_at }}'::timestamp as dbt_batch_ds
+{%- endmacro %}
+
