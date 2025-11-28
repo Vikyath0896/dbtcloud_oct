@@ -1,21 +1,33 @@
 {{config(
-    tags='sample'
+    tags = 'sample'
 )}}
 
-with supplier as (
-    select * from {{ ref('stg_supplier') }}
+with suppliers as (
+    select *
+    from {{ ref('stg_supplier') }}
 ),
+
 nations as (
-    select * from {{ ref('stg_nations') }}
+    select *
+    from {{ ref('stg_nations') }}
 ),
+
 regions as (
-    select * from {{ ref('stg_region') }}
+    select *
+    from {{ ref('stg_region') }}
 )
 
-select 
-    c.*, 
-from supplier c
+select s.* exclude (nation_id),n.name as nation_name,r.name as region_name,
+
+from suppliers s
 join nations n
-    on n.nation_id = c.nation_id
+    on s.nation_id = n.nation_id
 join regions r
-    on r.region_id = n.region_id
+    on n.region_id=r.region_id
+
+
+
+
+
+
+

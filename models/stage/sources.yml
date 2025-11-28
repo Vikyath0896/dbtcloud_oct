@@ -6,6 +6,11 @@ sources:
       - name: customers
       - name: regions
       - name: nations
+        columns:
+        - name: nation_id
+          data_type: int
+          constraints:
+           - type: not_null
       - name: v_nations
       
       - name: lineitems
